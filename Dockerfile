@@ -13,13 +13,14 @@ RUN apk add --no-cache \
     libzip-dev \
     zip \
     unzip \
+    sqlite-dev \
     mysql-client \
     oniguruma-dev \
     libpng-dev \
     libjpeg-turbo-dev \
     freetype-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install pdo pdo_mysql mbstring zip gd opcache bcmath
+    && docker-php-ext-install pdo pdo_mysql pdo_sqlite mbstring zip gd opcache bcmath
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
