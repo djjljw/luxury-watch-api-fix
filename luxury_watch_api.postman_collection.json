@@ -1,0 +1,166 @@
+{
+  "info": {
+    "_postman_id": " luxury-watch-api-collection",
+    "name": "Luxury Watch API (Toko Jam Mewah)",
+    "description": "Koleksi request Postman untuk RESTful API Toko Jam Mewah (Laravel 12 + MySQL + Scramble Documentation).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Get All Watches (Daftar Jam Mewah)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/jam-tangan",
+          "host": ["{{base_url}}"],
+          "path": ["api", "jam-tangan"]
+        }
+      }
+    },
+    {
+      "name": "2. Get Detail Watch (Detail 1 Jam Mewah)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/jam-tangan/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "jam-tangan", "1"]
+        }
+      }
+    },
+    {
+      "name": "3. Create Watch (Tambah Jam Mewah Baru)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nama\": \"Rolex Daytona Cosmograph\",\n  \"brand\": \"Rolex\",\n  \"harga\": 520000000,\n  \"tahun_rilis\": 2024,\n  \"tipe_gerakan\": \"Automatic\",\n  \"material\": \"Oystersteel & Cerachrom\",\n  \"status\": \"tersedia\",\n  \"foto\": \"https://images.unsplash.com/photo-1523275335684-37898b6baf30\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/jam-tangan",
+          "host": ["{{base_url}}"],
+          "path": ["api", "jam-tangan"]
+        }
+      }
+    },
+    {
+      "name": "4. Update Watch (Perbarui Jam Mewah - PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nama\": \"Rolex Submariner Date (Ref. 126610LN)\",\n  \"brand\": \"Rolex\",\n  \"harga\": 255000000,\n  \"tahun_rilis\": 2023,\n  \"tipe_gerakan\": \"Automatic\",\n  \"material\": \"Oystersteel\",\n  \"status\": \"tersedia\",\n  \"foto\": \"https://images.unsplash.com/photo-1523275335684-37898b6baf30\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/jam-tangan/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "jam-tangan", "1"]
+        }
+      }
+    },
+    {
+      "name": "5. Partial Update Watch (Perbarui Status - PATCH)",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"terjual\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/jam-tangan/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "jam-tangan", "1"]
+        }
+      }
+    },
+    {
+      "name": "6. Delete Watch (Hapus Jam Mewah)",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/jam-tangan/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "jam-tangan", "1"]
+        }
+      }
+    },
+    {
+      "name": "7. Scramble API Docs UI",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/docs/api",
+          "host": ["{{base_url}}"],
+          "path": ["docs", "api"]
+        }
+      }
+    },
+    {
+      "name": "8. Scramble OpenAPI JSON",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/docs/api.json",
+          "host": ["{{base_url}}"],
+          "path": ["docs", "api.json"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    }
+  ]
+}

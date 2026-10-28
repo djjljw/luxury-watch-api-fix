@@ -1,0 +1,46 @@
+services:
+  - type: web
+    name: luxury-watch-api
+    runtime: docker
+    plan: free
+    region: singapore
+    envVars:
+      - key: APP_NAME
+        value: "Luxury Watch API"
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        generateValue: true
+      - key: DB_CONNECTION
+        value: mysql
+      - key: RUN_MIGRATIONS
+        value: "true"
+      - key: DB_HOST
+        fromDatabase:
+          name: luxury-watch-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: luxury-watch-db
+          property: port
+      - key: DB_DATABASE
+        fromDatabase:
+          name: luxury-watch-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: luxury-watch-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: luxury-watch-db
+          property: password
+
+databases:
+  - name: luxury-watch-db
+    databaseName: toko_jam_mewah
+    user: watch_user
+    plan: free
+    region: singapore
