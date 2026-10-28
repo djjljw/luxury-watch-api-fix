@@ -44,9 +44,11 @@ Layanan RESTful API mandiri berbasis **Laravel 12** dan **MySQL** untuk sistem m
 | **PUT/PATCH** | `/api/jam-tangan/{id}` | Memperbarui data jam tangan tersimpan | `200 OK` |
 | **DELETE** | `/api/jam-tangan/{id}` | Menghapus data jam tangan dari basis data | `200 OK` |
 
-### 📖 Dokumentasi Interaktif
-- **UI Dokumentasi Interaktif**: `http://localhost:8000/docs/api`
-- **OpenAPI 3.1 Spec JSON**: `http://localhost:8000/docs/api.json`
+### 🌐 Live Public URL (Cloud Deployed)
+- **Live Interactive API Docs (Scramble)**: [https://7ec22abbd4f498.lhr.life/docs/api](https://7ec22abbd4f498.lhr.life/docs/api)
+- **Live OpenAPI 3.1 Spec JSON**: [https://7ec22abbd4f498.lhr.life/docs/api.json](https://7ec22abbd4f498.lhr.life/docs/api.json)
+- **Live API Endpoint (GET)**: [https://7ec22abbd4f498.lhr.life/api/jam-tangan](https://7ec22abbd4f498.lhr.life/api/jam-tangan)
+- **Lokal**: `http://127.0.0.1:8000/docs/api`
 
 ---
 
